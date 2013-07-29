@@ -8,8 +8,6 @@ PeanutsMsn 消息平台管理系统
 
 What
 ----
-
-   消息平台管理系统
    
    一套通用的适用于大部分移动应用的内容发布平台
    
@@ -25,11 +23,7 @@ What
    
    移动应用可以利用API获取消息列表和详细消息内容
    
-Status
-------
-Version: 1.0
 
-版本号:1.0   
 
 Directory
 ---------
@@ -42,6 +36,10 @@ Directory
    documentation.rst
    api.rst
    support.rst
+
+Status
+------
+Version: 1.0
 
 
 search
