@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>System 系统说明 &mdash; PeanutsMsn 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PeanutsMsn 1.0 documentation" href="index.html" />
+    <link rel="next" title="API 客户端接口" href="api.html" />
+    <link rel="prev" title="Package Description 工程文件分布及说明" href="packagedescription.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">PeanutsMsn 1.0 documentation</a></div>
+        <div class="rel">
+          <a href="packagedescription.html" title="Package Description 工程文件分布及说明"
+             accesskey="P">previous</a> |
+          <a href="api.html" title="API 客户端接口"
+             accesskey="N">next</a>
+        </div>
+       </div>
+    </div>
+
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+
+
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="system">
+<span id="documentation"></span><h1>System 系统说明<a class="headerlink" href="#system" title="Permalink to this headline">¶</a></h1>
+<p>管理人员可以管理后台用户(增删查改账户),管理所有消息(增删查改所有消息)</p>
+<p>编辑人员可以管理自己的消息(增删查改自己发布的消息),修改自己账户密码</p>
+<div class="section" id="admin-management">
+<h2>Admin Management 管理人员功能<a class="headerlink" href="#admin-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3><strong>消息管理功能</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="login">
+<h3>Login 登录<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>支持不同等级用户的登录</p>
+<p>数据库默认有root:root的初始账户,登录后请修改密码,据此增添其他账户</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>输入账户密码登录</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3>Login 登出<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>登出系统,自动跳转回登录界面</p>
+<p>删除cookie等信息</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>导航栏点击LOGOUT</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="new-post">
+<h3>New post 发布新消息<a class="headerlink" href="#new-post" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>管理员登录后默认进入发布新消息页面</p>
+<p>目前只能群发,还不能针对特定用户发布消息</p>
+<p>可以编辑消息标题,摘要,内容(标题,摘要有长度限制)</p>
+<p>(支持基本的html可视化编辑，如设定字体、修改文本格式（缩进、列表、超链接等）、插入图片等)</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击NEW POST,输入新消息的信息后点击发布</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="postlist">
+<h3>Postlist 展示消息列表<a class="headerlink" href="#postlist" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>管理员登录后可以选择进入消息列表,展现所有消息的标题,摘要,修改时间</p>
+<p>每个消息都附有展开,删除,修改,改变消息拥有者选择</p>
+<p>消息按照修改时间降序排序,分页显示</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击POST MANAGE,输入新消息的信息后点击发布</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="get-post">
+<h3>Get post 显示具体消息内容<a class="headerlink" href="#get-post" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>展开具体消息内容</p>
+<p>支持响应式网页设计(responsive design),根据浏览环境缩放网页内容</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在消息列表中点击show</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="delete-post">
+<h3>Delete post 删除消息<a class="headerlink" href="#delete-post" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>每个消息都附有删除选择,点击后可删除</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在消息列表中点击delete</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="edit-post">
+<h3>Edit post 修改消息<a class="headerlink" href="#edit-post" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>每个消息都附有修改选择,点击后转入修改页面,可以修改标题,摘要,内容</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在消息列表中点击edit</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="change-owner">
+<h3>Change owner 改变消息拥有者<a class="headerlink" href="#change-owner" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>变更消息拥有者,点击后进入变更页面,输入新的消息拥有者名字,即可修改</p>
+<p>新的消息拥有者必须是系统中已经存在的用户名,否则报错,要求重新输入</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在消息列表中点击change owner</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3><strong>用户管理功能</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="user-account">
+<h3>User account 更改本账户信息<a class="headerlink" href="#user-account" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>输入两次新密码即可更改,两次输入密码必须一致</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击USER MANAGE</p>
+<p>默认即为YOUR ACCOUNT分页,可以修改密码,email</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="user-list">
+<h3>User list 展示用户列表<a class="headerlink" href="#user-list" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>管理员登录后可以选择进入用户列表,展现所有用户</p>
+<p>显示用户权限(2为管理员,1为编辑人员)及email</p>
+<p>每个用户都附有删除按钮,可以删除账户</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击USER MANAGE,点击左侧分栏的OTHER USER</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="delete-user">
+<h3>Delete user 删除用户<a class="headerlink" href="#delete-user" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>用户列表中每个用户都附有删除选择,点击后可删除</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在用户列表中点击delete</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="new-user">
+<h3>New user 增加用户<a class="headerlink" href="#new-user" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>增加新的用户</p>
+<p>可以选择增加管理人员还是编辑人员</p>
+<p>输入账户名,密码,email (账户名不可与现有系统冲突,否则报错要求重新输入)</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击USER MANAGE,点击左侧分栏的NEW USER</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="editor-management">
+<h2>Editor Management 编辑人员功能<a class="headerlink" href="#editor-management" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3><strong>消息管理功能</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>Login 登录<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>支持不同等级用户的登录</p>
+<p>数据库默认有root:root的初始账户,登录后请修改密码,据此增添其他账户</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>输入账户密码登录</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>Login 登出<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>登出系统,自动跳转回登录界面</p>
+<p>删除cookie等信息</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>导航栏点击LOGOUT</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>New post 发布新消息<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>管理员登录后默认进入发布新消息页面</p>
+<p>目前只能群发,还不能针对特定用户发布消息</p>
+<p>可以编辑消息标题,摘要,内容(标题,摘要有长度限制)</p>
+<p>(支持基本的html可视化编辑，如设定字体、修改文本格式（缩进、列表、超链接等）、插入图片等)</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击NEW POST,输入新消息的信息后点击发布</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>Postlist 展示消息列表<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>管理员登录后可以选择进入消息列表,展现 <strong>自己发布的</strong> 消息的标题,摘要,修改时间</p>
+<p>每个消息都附有展开,删除,修改,改变消息拥有者选择</p>
+<p>消息按照修改时间降序排序,分页显示</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击POST MANAGE,输入新消息的信息后点击发布</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>Get post 显示具体消息内容<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>展开具体消息内容</p>
+<p>支持响应式网页设计(responsive design),根据浏览环境缩放网页内容</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在消息列表中点击show</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>Delete post 删除消息<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>每个消息都附有删除选择,点击后可删除</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在消息列表中点击delete</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h3>Edit post 修改消息<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>每个消息都附有修改选择,点击后转入修改页面,可以修改标题,摘要,内容</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在消息列表中点击edit</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3><strong>用户管理功能</strong><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id13">
+<h3>User account 更改本账户信息<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">功能说明:</p>
+<blockquote>
+<div><p>输入两次新密码即可更改,两次输入密码必须一致</p>
+</div></blockquote>
+</li>
+<li><p class="first">使用方法:</p>
+<blockquote>
+<div><p>在导航栏点击USER MANAGE</p>
+<p>默认即为YOUR ACCOUNT分页,可以修改密码,email</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and Configuration 系统安装及运行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packagedescription.html">Package Description 工程文件分布及说明</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">System 系统说明</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#admin-management">Admin Management 管理人员功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editor-management">Editor Management 编辑人员功能</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API 客户端接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support 技术支持</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="packagedescription.html" title="Package Description 工程文件分布及说明"
+             >previous</a> |
+          <a href="api.html" title="API 客户端接口"
+             >next</a>
+            <br/>
+            <a href="_sources/documentation.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2013, Vincent Chan.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

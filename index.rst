@@ -1,0 +1,31 @@
+.. webcontent documentation master file, created by Vincent Chan
+
+
+PeanutsMsn 消息平台管理系统
+===================
+
+
+版本号:1.0
+
+管理人员可以管理后台用户(增删查改账户),管理所有消息(增删查改所有消息)
+
+编辑人员可以管理自己的消息(增删查改自己发布的消息),修改自己账户密码
+
+普通用户可以利用API获取消息列表,和详细消息内容
+
+.. toctree::
+   :maxdepth: 2
+
+   installation.rst
+   packagedescription.rst
+   documentation.rst
+   api.rst
+   support.rst
+
+
+Indices and tables
+==================
+
+
+* :ref:`search`
+

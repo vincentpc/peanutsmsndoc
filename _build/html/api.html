@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>API 客户端接口 &mdash; PeanutsMsn 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PeanutsMsn 1.0 documentation" href="index.html" />
+    <link rel="next" title="Support 技术支持" href="support.html" />
+    <link rel="prev" title="System 系统说明" href="documentation.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">PeanutsMsn 1.0 documentation</a></div>
+        <div class="rel">
+          <a href="documentation.html" title="System 系统说明"
+             accesskey="P">previous</a> |
+          <a href="support.html" title="Support 技术支持"
+             accesskey="N">next</a>
+        </div>
+       </div>
+    </div>
+
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+
+
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="api">
+<span id="id1"></span><h1>API 客户端接口<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="postlist">
+<h2>postlist 获取消息列表<a class="headerlink" href="#postlist" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="url">
+<h3>url:<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><a class="reference external" href="http://xxx/api/v1/postlist?from=xx&amp;count=xx">http://xxx/api/v1/postlist?from=xx&amp;count=xx</a></div></blockquote>
+</div>
+<div class="section" id="http">
+<h3>HTTP请求方式:<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h3>请求参数:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">from:</p>
+<blockquote>
+<div><p>必选:可选</p>
+<p>类型:int</p>
+<p>说明:参数为指定从第几条消息开始列出 (0为最新的第一条消息)</p>
+<blockquote>
+<div><p>默认为from=0 即从最新的消息开始列出</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">count:</p>
+<blockquote>
+<div><p>必选:可选</p>
+<p>类型:int</p>
+<p>说明:表示列出从from开始的多少条消息 (必须大于等于1)</p>
+<blockquote>
+<div><p>默认为count=20 即列出20条消息</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>返回数据:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>列出公共消息的id, title,abstract,createtime,changetime,ownerid,默认按照changetime排序:</div></blockquote>
+<blockquote id="making-a-table">
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数名称</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>消息的唯一标志符,对应获取具体内容的postid</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>消息标题</td>
+</tr>
+<tr class="row-even"><td>abstract</td>
+<td>消息摘要</td>
+</tr>
+<tr class="row-odd"><td>createtime</td>
+<td>消息创建时间</td>
+</tr>
+<tr class="row-even"><td>changetime</td>
+<td>消息最近一次的修改时间</td>
+</tr>
+<tr class="row-odd"><td>ownerid</td>
+<td>消息发布者(拥有者)的id</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>示例:
+&#8212;</p>
+<blockquote>
+<div><p>按照JSON格式显示:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[{</span><span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;test for abstract again&quot;</span><span class="p">,</span> <span class="s">&quot;abstract&quot;</span><span class="p">:</span> <span class="s">&quot;test&quot;</span><span class="p">,</span>
+
+<span class="s">&quot;createtime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 14:49:41&quot;</span><span class="p">,</span> <span class="s">&quot;changetime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 19:51:13&quot;</span><span class="p">,</span> <span class="s">&quot;ownerid&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+
+<span class="p">{</span><span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;Tornado&quot;</span><span class="p">,</span> <span class="s">&quot;abstract&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+
+<span class="s">&quot;createtime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 14:49:52&quot;</span><span class="p">,</span> <span class="s">&quot;changetime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 14:49:52&quot;</span><span class="p">,</span> <span class="s">&quot;ownerid&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="getpost">
+<h2>getpost 获取详细消息内容<a class="headerlink" href="#getpost" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>url:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><a class="reference external" href="http://xxx/api/v1/getpost?postid=xx">http://xxx/api/v1/getpost?postid=xx</a></div></blockquote>
+</div>
+<div class="section" id="id5">
+<h3>HTTP请求方式:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>GET</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h3>请求参数:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">postid:</p>
+<blockquote>
+<div><p>必选:必选</p>
+<p>类型:int</p>
+<p>说明:postid为数据库中每条消息的唯一标识符</p>
+<blockquote>
+<div><p>如果消息删除或不存在这个postid则显示no post网页不指定postid则默认显示no post网页</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>返回数据:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>获取具体的某条消息内容,生成简单的网页显示(网页本身支持responsive design)</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and Configuration 系统安装及运行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packagedescription.html">Package Description 工程文件分布及说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">System 系统说明</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">API 客户端接口</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#postlist">postlist 获取消息列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getpost">getpost 获取详细消息内容</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support 技术支持</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="documentation.html" title="System 系统说明"
+             >previous</a> |
+          <a href="support.html" title="Support 技术支持"
+             >next</a>
+            <br/>
+            <a href="_sources/api.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2013, Vincent Chan.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

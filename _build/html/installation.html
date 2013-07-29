@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installation and Configuration 系统安装及运行 &mdash; PeanutsMsn 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/agogo.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PeanutsMsn 1.0 documentation" href="index.html" />
+    <link rel="next" title="Package Description 工程文件分布及说明" href="packagedescription.html" />
+    <link rel="prev" title="PeanutsMsn 消息平台管理系统" href="index.html" /> 
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">PeanutsMsn 1.0 documentation</a></div>
+        <div class="rel">
+          <a href="index.html" title="PeanutsMsn 消息平台管理系统"
+             accesskey="P">previous</a> |
+          <a href="packagedescription.html" title="Package Description 工程文件分布及说明"
+             accesskey="N">next</a>
+        </div>
+       </div>
+    </div>
+
+
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+
+
+
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation-and-configuration">
+<span id="installation-and-configuaration"></span><h1>Installation and Configuration 系统安装及运行<a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation 安装<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dependency">
+<h3>Dependency<a class="headerlink" href="#dependency" title="Permalink to this headline">¶</a></h3>
+<ul id="making-a-list">
+<li><p class="first">Python 2.7:</p>
+<div class="highlight-python"><pre>http://www.python.org/download/releases/2.7/</pre>
+</div>
+</li>
+<li><p class="first">Mysql:</p>
+<div class="highlight-python"><pre>sudo apt-get install mysql
+sudo apt-get install mysql-dev</pre>
+</div>
+</li>
+<li><p class="first">Mysql-python:</p>
+<div class="highlight-python"><pre>pip install mysql-python</pre>
+</div>
+</li>
+<li><p class="first">Tornado:</p>
+<div class="highlight-python"><pre>pip install tornado</pre>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>利用requirement.txt可自动安装mysql-python,tornado</p>
+<p class="last">pip install -r requirement.txt</p>
+</div>
+</div>
+<div class="section" id="install">
+<h3>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h3>
+<ul id="id1">
+<li><p class="first">解压缩:</p>
+<div class="highlight-python"><pre>tar xvzf webcontentvXX.tar.gz</pre>
+</div>
+</li>
+<li><p class="first">进入目录:</p>
+<div class="highlight-python"><pre>cd webcontentvXX</pre>
+</div>
+</li>
+<li><p class="first">设置参数(初次运行前设置一次即可,详细介绍见下文):</p>
+<div class="highlight-python"><pre>vi conf.py</pre>
+</div>
+</li>
+<li><p class="first">运行:</p>
+<div class="highlight-python"><pre>python web.py</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration 配置<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="database-configuration">
+<span id="database-config"></span><h3>Database Configuration<a class="headerlink" href="#database-configuration" title="Permalink to this headline">¶</a></h3>
+<p>使用sqlconfig文件下的sql脚本创建数据库</p>
+<p>默认创建名字为WEBPOSTV1的数据库,如果存在则会删除后创建</p>
+<p>默认USER有一个root账户(帐户密码均为root) 登录后可修改密码:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">Mysql</span> <span class="o">-</span><span class="n">uname</span> <span class="o">-</span><span class="n">ppassword</span> <span class="o">&lt;</span> <span class="n">CreateDatabase</span><span class="o">.</span><span class="n">sql</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="config">
+<span id="id2"></span><h3>Configuration<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h3>
+<p>初始设置参数说明(conf.py):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#######################</span>
+<span class="c"># system Configure ##</span>
+<span class="c">#######################</span>
+<span class="c">#初始运行时设置cookie加密密钥,任意字符串</span>
+<span class="n">COOKIE_SECRET</span> <span class="o">=</span>  <span class="s">&#39;mynameisvincentchan&#39;</span>
+<span class="c">#初始运行时设置关闭http服务器缓冲时间,默认3秒</span>
+<span class="n">MAX_WAIT_SECONDS_BEFORE_SHUTDOWN</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<span class="c">#######################</span>
+<span class="c"># Database Configure ##</span>
+<span class="c">#######################</span>
+
+<span class="c">#数据库连接设置,以此为IP,端口,用户名,用户密码,数据库名称</span>
+<span class="n">DB_HOST</span> <span class="o">=</span> <span class="s">&#39;10.0.2.15&#39;</span>
+<span class="n">DB_PORT</span> <span class="o">=</span> <span class="mi">3306</span>
+<span class="n">DB_USER</span> <span class="o">=</span> <span class="s">&#39;admin&#39;</span>
+<span class="n">DB_PASSWD</span> <span class="o">=</span> <span class="s">&#39;123456&#39;</span>
+<span class="n">DB_NAME</span> <span class="o">=</span> <span class="s">&#39;MSNV1&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="sidebar">
+          <h3>Table Of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Installation and Configuration 系统安装及运行</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation 安装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration 配置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="packagedescription.html">Package Description 工程文件分布及说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">System 系统说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API 客户端接口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support 技术支持</a></li>
+</ul>
+
+          <h3 style="margin-top: 1.5em;">Search</h3>
+          <form class="search" action="search.html" method="get">
+            <input type="text" name="q" />
+            <input type="submit" value="Go" />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+          </form>
+          <p class="searchtip" style="font-size: 90%">
+            Enter search terms or a module, class or function name.
+          </p>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <a href="index.html" title="PeanutsMsn 消息平台管理系统"
+             >previous</a> |
+          <a href="packagedescription.html" title="Package Description 工程文件分布及说明"
+             >next</a>
+            <br/>
+            <a href="_sources/installation.txt"
+               rel="nofollow">Show Source</a>
+        </div>
+
+        <div class="right">
+          
+    <div class="footer">
+        &copy; Copyright 2013, Vincent Chan.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
