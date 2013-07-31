@@ -123,9 +123,9 @@
 <blockquote>
 <div><p>必选:可选</p>
 <p>类型:int</p>
-<p>说明:参数为指定从第几条消息开始列出 (0为最新的第一条消息)</p>
+<p>说明:指定从第几条消息开始列出 (0为最新的第一条消息)</p>
 <blockquote>
-<div><p>默认为from=0 即从最新的消息开始列出</p>
+<div><p>默认为from=0 (即从最新的消息开始列出)</p>
 </div></blockquote>
 </div></blockquote>
 </li>
@@ -135,7 +135,7 @@
 <p>类型:int</p>
 <p>说明:表示列出从from开始的多少条消息 (必须大于等于1)</p>
 <blockquote>
-<div><p>默认为count=20 即列出20条消息</p>
+<div><p>默认为count=20 (即列出20条消息)</p>
 </div></blockquote>
 </div></blockquote>
 </li>
@@ -146,38 +146,7 @@
 <blockquote>
 <div>列出公共消息的id, title,abstract,createtime,changetime,ownerid,默认按照changetime排序:</div></blockquote>
 <blockquote id="making-a-table">
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="25%" />
-<col width="75%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">参数名称</th>
-<th class="head">说明</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>id</td>
-<td>消息的唯一标志符,对应获取具体内容的postid</td>
-</tr>
-<tr class="row-odd"><td>title</td>
-<td>消息标题</td>
-</tr>
-<tr class="row-even"><td>abstract</td>
-<td>消息摘要</td>
-</tr>
-<tr class="row-odd"><td>createtime</td>
-<td>消息创建时间</td>
-</tr>
-<tr class="row-even"><td>changetime</td>
-<td>消息最近一次的修改时间</td>
-</tr>
-<tr class="row-odd"><td>ownerid</td>
-<td>消息发布者(拥有者)的id</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div></div></blockquote>
 <p>示例:
 &#8212;</p>
 <blockquote>
@@ -214,9 +183,6 @@
 <div><p>必选:必选</p>
 <p>类型:int</p>
 <p>说明:postid为数据库中每条消息的唯一标识符</p>
-<blockquote>
-<div><p>如果消息删除或不存在这个postid则显示no post网页不指定postid则默认显示no post网页</p>
-</div></blockquote>
 </div></blockquote>
 </li>
 </ul>
@@ -224,7 +190,10 @@
 <div class="section" id="id7">
 <h3>返回数据:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div>获取具体的某条消息内容,生成简单的网页显示(网页本身支持responsive design)</div></blockquote>
+<div><p>获取具体的某条消息内容,生成简单的网页显示(网页本身支持responsive design)</p>
+<p>如果消息删除或不存在则显示no post网页</p>
+<p>不指定postid则默认显示no post网页</p>
+</div></blockquote>
 </div>
 </div>
 </div>

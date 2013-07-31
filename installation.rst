@@ -19,26 +19,26 @@ Dependency
 
 * Python 2.7::
 
-    参考网址`Python 2.7<http://www.python.org/download/releases/2.7/>`
+ 参考网址 `Python 2.7 <http://www.python.org/download/releases/2.7/>`_
 
 * Mysql::
 
     sudo apt-get install mysql
     sudo apt-get install mysql-dev
     
-    参考网址`mysql <http://www.mysql.com/>`
+ 参考网址 `mysql <http://www.mysql.com/>`_
 
 * Mysql-python::
 
     pip install mysql-python
 
-   参考网址`MySQL for Python<http://sourceforge.net/projects/mysql-python/>`
+ 参考网址 `MySQL for Python <http://sourceforge.net/projects/mysql-python/>`_
 
 * Tornado::
  
     pip install tornado
     
-   参考网址`Tornado <http://www.tornadoweb.cn/>`
+ 参考网址 `Tornado <http://www.tornadoweb.cn/>`_
 
 
 .. note::
