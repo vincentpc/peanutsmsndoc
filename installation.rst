@@ -19,20 +19,26 @@ Dependency
 
 * Python 2.7::
 
-    http://www.python.org/download/releases/2.7/
-    
+    参考网址`Python 2.7<http://www.python.org/download/releases/2.7/>`
+
 * Mysql::
 
     sudo apt-get install mysql
     sudo apt-get install mysql-dev
+    
+    参考网址`mysql <http://www.mysql.com/>`
 
 * Mysql-python::
 
     pip install mysql-python
 
+   参考网址`MySQL for Python<http://sourceforge.net/projects/mysql-python/>`
+
 * Tornado::
  
     pip install tornado
+    
+   参考网址`Tornado <http://www.tornadoweb.cn/>`
 
 
 .. note::
@@ -49,7 +55,7 @@ Install
 
 * 解压缩::
 
-   tar xvzf webcontentvXX.tar.gz  
+   tar xvzf peanutsmsnvXX.tar.gz 
 
 * 进入目录::
 
@@ -57,7 +63,7 @@ Install
 
 * 设置参数(初次运行前设置一次即可,详细介绍见下文)::
 
-   vi conf.py           
+   vi peanutsmsnvXX              
 
 * 运行::
 
@@ -78,7 +84,7 @@ Database Configuration
 
 默认创建名字为WEBPOSTV1的数据库,如果存在则会删除后创建
 
-默认USER有一个root账户(帐户密码均为root) 登录后可修改密码::
+默认USER有一个管理员账户(帐户密码均为root) 登录后可修改密码::
 
    Mysql -uname -ppassword < CreateDatabase.sql  
 
@@ -93,8 +99,8 @@ Configuration
     #######################
     #初始运行时设置cookie加密密钥,任意字符串
     COOKIE_SECRET =  'mynameisvincentchan' 
-    #初始运行时设置关闭http服务器缓冲时间,默认3秒
-    MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 3
+    #初始运行时设置关闭http服务器缓冲时间,默认1秒
+    MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 1
     
     
     #######################

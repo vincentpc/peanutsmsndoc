@@ -10,8 +10,12 @@ Support 技术支持
 
 * 开发语言: python (需要mysqldb支持)
 
-* 前端::
+* 前端显示::
    bootstrap(css美化)
    
    Ckeditor (消息编辑器)
+   
+* 版本控制: Git
+
+* 文档编写: Sphnix
 
