@@ -42,10 +42,10 @@ Dependency
 
 
 .. note::
-   利用requirement.txt可自动安装mysql-python,tornado
-    
-   pip install -r requirement.txt
+   make init 自动安装依赖软件(tornado与mysql-python)
    
+   make doc  自动生成使用文档,文档目录在doc/_build下
+       
 .. _install
 
 Install
@@ -53,21 +53,22 @@ Install
 
 .. _making-a-list:
 
-* 解压缩::
-
-   tar xvzf peanutsmsnvXX.tar.gz 
 
 * 进入目录::
 
-   cd webcontentvXX     
+   cd peanuts     
 
-* 设置参数(初次运行前设置一次即可,详细介绍见下文)::
+* 初次运行创建数据库(/etc/CreateDatabase.sql)::
 
-   vi peanutsmsnvXX              
+   mysql -uname -ppassword < CreateDatabase.sql      
+   
+* 初次运行设置参数(设置一次即可,详细介绍见下文)::
+
+   vi config.py            
 
 * 运行::
-
-   python web.py          
+   
+   python app.py          
 
 .. _configuration
 
@@ -80,19 +81,17 @@ Configuration 配置
 Database Configuration
 ----------------------
 
-使用sqlconfig文件下的sql脚本创建数据库
+使用peanuts/etc文件下的sql脚本创建数据库
 
-默认创建名字为WEBPOSTV1的数据库,如果存在则会删除后创建
+默认创建名字为PEANUTS的数据库,如果存在则会删除后创建
 
 默认USER有一个管理员账户(帐户密码均为root) 登录后可修改密码::
 
-   Mysql -uname -ppassword < CreateDatabase.sql  
-
 .. _config:
 
-Configuration
--------------
-初始设置参数说明(conf.py)::
+System Configuration
+--------------------
+初始设置系统参数说明(config.py)::
 
     #######################
     # system Configure ##
@@ -107,12 +106,16 @@ Configuration
     # Database Configure ##
     #######################
     
-    #数据库连接设置,以此为IP,端口,用户名,用户密码,数据库名称
+    #数据库连接设置,依次为IP,端口,用户名,用户密码,数据库名称
     DB_HOST = '10.0.2.15' 
     DB_PORT = 3306
-    DB_USER = 'admin'
-    DB_PASSWD = '123456'
-    DB_NAME = 'MSNV1'
+    DB_USER = 'xxxx'
+    DB_PASSWD = 'xxxx'
+    DB_NAME = 'PEANUST'
+
+Log
+---
+存储在log文件夹下::
 
 
 

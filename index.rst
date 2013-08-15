@@ -1,15 +1,15 @@
 .. webcontent documentation master file, created by Vincent Chan
 
 
-PeanutsMsn 消息平台管理系统
-===================
+Peanuts 消息平台管理系统
+================
 
 
 
 What
 ----
    
-   一套通用的适用于大部分移动应用的内容发布平台
+   一套通用的内容发布平台
    
    包括后台消息管理系统和移动端接口
    
@@ -39,7 +39,7 @@ Directory
 
 Status
 ------
-Version: 1.0
+Version: 1.1
 
 
 search

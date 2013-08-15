@@ -84,13 +84,27 @@
   <div class="section" id="layout">
 <span id="pakage-description"></span><h1>Layout 工程文件分布及说明<a class="headerlink" href="#layout" title="Permalink to this headline">¶</a></h1>
 <ul id="making-a-list">
-<li><p class="first">app:</p>
+<li><p class="first">docs:</p>
+<blockquote>
+<div><p>开发及使用文档(本网站源代码)</p>
+</div></blockquote>
+</li>
+<li><p class="first">log:</p>
+<blockquote>
+<div><p>运行时候产生的log信息记录</p>
+</div></blockquote>
+</li>
+<li><p class="first">peanuts:</p>
+<blockquote>
+<div><p>项目源代码</p>
+<ul>
+<li><p class="first">handlers:</p>
 <blockquote>
 <div><p>逻辑层:响应不同URL的handler</p>
 <p>(根据权限不同的操作,分别放在admin,editor,api三个文件夹中)</p>
 </div></blockquote>
 </li>
-<li><p class="first">model:</p>
+<li><p class="first">models:</p>
 <blockquote>
 <div><p>数据库相关的函数方法,与数据库相关的增删查改方法放在dbapi.py中</p>
 </div></blockquote>
@@ -107,9 +121,22 @@
 <p>根据交互的对象不同分为admin edtior两个文件夹</p>
 </div></blockquote>
 </li>
-<li><p class="first">log:</p>
+<li><p class="first">config.py:</p>
 <blockquote>
-<div><p>运行时候产生的log信息记录</p>
+<div><p>全局配置文件(数据库配置,服务器配置)</p>
+</div></blockquote>
+</li>
+<li><p class="first">app.py:</p>
+<blockquote>
+<div><p>服务器启动文件</p>
+</div></blockquote>
+</li>
+<li><p class="first">etc:</p>
+<blockquote>
+<div><p>初始建立数据库的脚本文件</p>
+</div></blockquote>
+</li>
+</ul>
 </div></blockquote>
 </li>
 <li><p class="first">tests:</p>
@@ -117,29 +144,24 @@
 <div><p>测试文档</p>
 </div></blockquote>
 </li>
-<li><p class="first">doc:</p>
-<blockquote>
-<div><p>开发及使用文档(本网站源代码)</p>
-</div></blockquote>
-</li>
-<li><p class="first">conf.py:</p>
-<blockquote>
-<div><p>全局配置文件(数据库配置,服务器配置)</p>
-</div></blockquote>
-</li>
-<li><p class="first">web.py:</p>
-<blockquote>
-<div><p>服务器启动文件</p>
-</div></blockquote>
-</li>
-<li><p class="first">sqlconfig:</p>
-<blockquote>
-<div><p>初始建立数据库文件</p>
-</div></blockquote>
-</li>
 <li><p class="first">README:</p>
 <blockquote>
 <div><p>项目说明文档</p>
+</div></blockquote>
+</li>
+<li><p class="first">Makefile:</p>
+<blockquote>
+<div><p>安装脚本</p>
+</div></blockquote>
+</li>
+<li><p class="first">requirements.txt:</p>
+<blockquote>
+<div><p>安装依赖软件</p>
+</div></blockquote>
+</li>
+<li><p class="first">LICENSE:</p>
+<blockquote>
+<div><p>版权声明</p>
 </div></blockquote>
 </li>
 </ul>

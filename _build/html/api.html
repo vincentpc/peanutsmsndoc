@@ -57,6 +57,7 @@
 <li><a class="reference internal" href="#http">HTTP请求方式:</a></li>
 <li><a class="reference internal" href="#id2">请求参数:</a></li>
 <li><a class="reference internal" href="#id3">返回数据:</a></li>
+<li><a class="reference internal" href="#json">示例(按照JSON格式显示):</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#getpost">getpost 获取详细消息内容</a><ul>
@@ -109,7 +110,7 @@
 <div class="section" id="url">
 <h3>url:<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference external" href="http://xxx/api/v1/postlist?from=xx&amp;count=xx">http://xxx/api/v1/postlist?from=xx&amp;count=xx</a></div></blockquote>
+<div><a class="reference external" href="http://example.com/api/v1/postlist?from=xx&amp;count=xx">http://example.com/api/v1/postlist?from=xx&amp;count=xx</a></div></blockquote>
 </div>
 <div class="section" id="http">
 <h3>HTTP请求方式:<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h3>
@@ -140,27 +141,31 @@
 </div></blockquote>
 </li>
 </ul>
+<p>如果参数不合法则按照默认情况显示</p>
 </div>
 <div class="section" id="id3">
 <h3>返回数据:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div>列出公共消息的id, title,abstract,createtime,changetime,ownerid,默认按照changetime排序:</div></blockquote>
-<blockquote id="making-a-table">
-<div></div></blockquote>
-<p>示例:
-&#8212;</p>
-<blockquote>
-<div><p>按照JSON格式显示:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[{</span><span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">23</span><span class="p">,</span> <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;test for abstract again&quot;</span><span class="p">,</span> <span class="s">&quot;abstract&quot;</span><span class="p">:</span> <span class="s">&quot;test&quot;</span><span class="p">,</span>
-
-<span class="s">&quot;createtime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 14:49:41&quot;</span><span class="p">,</span> <span class="s">&quot;changetime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 19:51:13&quot;</span><span class="p">,</span> <span class="s">&quot;ownerid&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
-
-<span class="p">{</span><span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s">&quot;title&quot;</span><span class="p">:</span> <span class="s">&quot;Tornado&quot;</span><span class="p">,</span> <span class="s">&quot;abstract&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
-
-<span class="s">&quot;createtime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 14:49:52&quot;</span><span class="p">,</span> <span class="s">&quot;changetime&quot;</span><span class="p">:</span> <span class="s">&quot;2013-07-22 14:49:52&quot;</span><span class="p">,</span> <span class="s">&quot;ownerid&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span>
-</pre></div>
+<div>列出公共消息的id, title,abstract,createtime,changetime,ownerid,默认按照id大小排序</div></blockquote>
+<ul class="simple">
+<li>id                   消息的唯一标志符,对应获取具体内容的postid</li>
+<li>title                消息标题</li>
+<li>abstract             消息摘要</li>
+<li>createtime           消息创建时间</li>
+<li>changetime           消息最近一次的修改时间</li>
+<li>ownerid              消息发布者(拥有者)的id</li>
+</ul>
 </div>
-</div></blockquote>
+<div class="section" id="json">
+<h3>示例(按照JSON格式显示):<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>::</dt>
+<dd><p class="first">[{&#8220;id&#8221;: 23, &#8220;title&#8221;: &#8220;test for abstract again&#8221;, &#8220;abstract&#8221;: &#8220;test&#8221;,</p>
+<p>&#8220;createtime&#8221;: &#8220;2013-07-22 14:49:41&#8221;, &#8220;changetime&#8221;: &#8220;2013-07-22 19:51:13&#8221;, &#8220;ownerid&#8221;: 4},</p>
+<p>{&#8220;id&#8221;: 24, &#8220;title&#8221;: &#8220;Tornado&#8221;, &#8220;abstract&#8221;: &#8220;&#8221;,</p>
+<p class="last">&#8220;createtime&#8221;: &#8220;2013-07-22 14:49:52&#8221;, &#8220;changetime&#8221;: &#8220;2013-07-22 14:49:52&#8221;, &#8220;ownerid&#8221;: 1}]</p>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="getpost">
@@ -168,7 +173,7 @@
 <div class="section" id="id4">
 <h3>url:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><a class="reference external" href="http://xxx/api/v1/getpost?postid=xx">http://xxx/api/v1/getpost?postid=xx</a></div></blockquote>
+<div><a class="reference external" href="http://example.com/api/v1/getpost?postid=xx">http://example.com/api/v1/getpost?postid=xx</a></div></blockquote>
 </div>
 <div class="section" id="id5">
 <h3>HTTP请求方式:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>

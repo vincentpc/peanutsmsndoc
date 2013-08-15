@@ -9,7 +9,7 @@ postlist 获取消息列表
 
 url:
 ----
-   http://xxx/api/v1/postlist?from=xx&count=xx
+   http://example.com/api/v1/postlist?from=xx&count=xx
 
 HTTP请求方式:
 ---------
@@ -19,6 +19,8 @@ HTTP请求方式:
 
 请求参数:
 -----
+
+
 * from:
 
    必选:可选
@@ -39,38 +41,35 @@ HTTP请求方式:
    
             默认为count=20 (即列出20条消息)
 
+如果参数不合法则按照默认情况显示
+
 返回数据:
 -----
+      列出公共消息的id, title,abstract,createtime,changetime,ownerid,默认按照id大小排序
 
-   列出公共消息的id, title,abstract,createtime,changetime,ownerid,默认按照changetime排序::
+* id                   消息的唯一标志符,对应获取具体内容的postid
+* title                消息标题
+* abstract             消息摘要
+* createtime           消息创建时间
+* changetime           消息最近一次的修改时间
+* ownerid              消息发布者(拥有者)的id
 
-.. _making-a-table:
-
-   ==============      ================================   
-      参数名称                      说明
-   ==============      ================================ 
-   id                   消息的唯一标志符,对应获取具体内容的postid
-   title                消息标题
-   abstract             消息摘要
-   createtime           消息创建时间
-   changetime           消息最近一次的修改时间
-   ownerid              消息发布者(拥有者)的id
-   ==============      ================ 
+  
 
 
+示例(按照JSON格式显示):
+---------------
 
-示例:
----
-
-   按照JSON格式显示::
+::
+   [{"id": 23, "title": "test for abstract again", "abstract": "test", 
    
-      [{"id": 23, "title": "test for abstract again", "abstract": "test", 
+   "createtime": "2013-07-22 14:49:41", "changetime": "2013-07-22 19:51:13", "ownerid": 4}, 
+   
+   {"id": 24, "title": "Tornado", "abstract": "", 
+   
+   "createtime": "2013-07-22 14:49:52", "changetime": "2013-07-22 14:49:52", "ownerid": 1}]
       
-      "createtime": "2013-07-22 14:49:41", "changetime": "2013-07-22 19:51:13", "ownerid": 4}, 
       
-      {"id": 24, "title": "Tornado", "abstract": "", 
-      
-      "createtime": "2013-07-22 14:49:52", "changetime": "2013-07-22 14:49:52", "ownerid": 1}]
 
 
 getpost 获取详细消息内容
@@ -78,7 +77,7 @@ getpost 获取详细消息内容
 
 url:
 ----
-   http://xxx/api/v1/getpost?postid=xx
+   http://example.com/api/v1/getpost?postid=xx
 
 HTTP请求方式:
 ---------
