@@ -40,9 +40,14 @@ Dependency
     
  参考网址 `Tornado <http://www.tornadoweb.cn/>`_
 
-
+* jinja2::
+ 
+    pip install jinja2
+    
+ 参考网址 `Jinja2 <http://jinja.pocoo.org/docs/#>`_
+ 
 .. note::
-   make init 自动安装依赖软件(tornado与mysql-python)
+   make init 自动安装依赖软件(jinja2,tornado,mysql-python)
    
    make doc  自动生成使用文档,文档目录在doc/_build下
        

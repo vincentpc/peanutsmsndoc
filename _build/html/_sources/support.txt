@@ -15,8 +15,10 @@ Support 技术支持
 * 文档编写: Sphnix
 
 * 前端显示::
+
    bootstrap(css美化)
    
    Ckeditor (消息编辑器)
    
+   Jinja2 (模板)
 
